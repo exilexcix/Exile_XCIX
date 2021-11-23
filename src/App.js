@@ -350,7 +350,7 @@ function App() {
 					</div>
 					<div class="team-member alan two-col-block">
 						<img
-							src="./img/alan.png"
+							src="./img/al.jpg"
 							alt="Al"
 							class="team-avatar two-col-block__column"
 						/>
@@ -361,7 +361,7 @@ function App() {
 					</div>
 					<div class="team-member mal two-col-block">
 						<img
-							src="./img/mal.png"
+							src="./img/macky.jpg"
 							alt="Macky"
 							class="team-avatar two-col-block__column"
 						/>
