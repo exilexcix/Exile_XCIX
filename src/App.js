@@ -317,7 +317,7 @@ function App() {
 				<section class="roadmap">
 					
 						<h2>Roadmap <span>Coming Soon</span></h2>
-						<p>Our project ethos is to help the underdog, support the little guy and a belief that we can achieve much more together than we could have alone. Our roadmap is design to help achieve that and will be voted on by the community before finalising.</p>
+						<p>Our project ethos is to help the underdog, support the little guy and a belief that we can achieve much more together than we could have alone. Our roadmap is designed to help achieve that and will be voted on in the community before finalising.</p>
 						<img src="./img/graffiti.png" alt="XCIX" />
 					
 				</section>
