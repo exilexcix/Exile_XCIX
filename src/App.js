@@ -110,9 +110,9 @@ function App() {
 
 	return (
 		<div className="wrapper" id="modern_wrap">
-			<img class="logo" src="./img/logo.png" alt="EXILE XCiX" />
+			<img className="logo" src="./img/logo.png" alt="EXILE XCiX" />
 			//--Mobile NAV--
-			<nav class="mobile-nav">
+			<nav className="mobile-nav">
 				
 				<ul>
 					<li><a href="#join">JOIN </a></li>
@@ -121,7 +121,7 @@ function App() {
 				</ul>
 			</nav>
 			//--DESKTOP NAV--
-			<nav class="dt-nav">
+			<nav className="dt-nav">
 				
 				<ul>
 					<li><a href="#join">JOIN EXILE XCiX</a></li>
@@ -129,8 +129,8 @@ function App() {
 					<li><a href="#team">THE TEAM</a></li>
 				</ul>
 			</nav>
-			<header class="two-col-block">
-			<div class="hero-text two-col-block__column">
+			<header className="two-col-block">
+			<div className="hero-text two-col-block__column">
 					<h1>Join the Axis of Exiles</h1>
 					<p>
 						9,999 unique Exile XCIX NFTs randomly generated on the Ethereum
@@ -138,19 +138,19 @@ function App() {
 					</p>
 					{!mintLive ? (
 					//--PRE MINT--
-					<div class="mint-button pre-mint button"><p>Mint coming soon</p></div>
+					<div className="mint-button pre-mint button"><p>Mint coming soon</p></div>
 					//--END PRE MINT--
 					):(
 						<>
 					//--MINT--
-					<h2 class="availability">
+					<h2 className="availability">
 					{data.totalSupply} / {CONFIG.MAX_SUPPLY}
 					</h2>
 
 					//-- SOLD OUT--
 					{Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
-					<div class="sold-out">
-						<div class="mint-button button"><p>SOLD OUT</p></div>
+					<div className="sold-out">
+						<div className="mint-button button"><p>SOLD OUT</p></div>
 						<p>You can still find {CONFIG.NFT_NAME} on
 
 						<a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
@@ -167,10 +167,10 @@ function App() {
 						<p>Excluding gas fees.</p>
 
 						{blockchain.account === "" || blockchain.smartContract === null ? (
-							<div class="not-connected">
+							<div className="not-connected">
 								<p>Connect to the {CONFIG.NETWORK.NAME} network</p>
-								<div class="connect-wrap">
-								<div class="button connect-btn"
+								<div className="connect-wrap">
+								<div className="button connect-btn"
 									onClick={(e) => {
 										e.preventDefault();
 										dispatch(connect());
@@ -189,9 +189,9 @@ function App() {
 						) : (
 							<>
 								<p>{feedback}</p>
-								<div class="purchase-wrap">
-								<div class="quantity">
-									<div class="button decrement-btn"
+								<div className="purchase-wrap">
+								<div className="quantity">
+									<div className="button decrement-btn"
 										disabled={claimingNft ? 1 : 0}
 										onClick={(e) => {
 											e.preventDefault();
@@ -203,7 +203,7 @@ function App() {
 
 									<p>{mintAmount}</p>
 
-									<div class="button increment-btn"
+									<div className="button increment-btn"
 										disabled={claimingNft ? 1 : 0}
 										onClick={(e) => {
 											e.preventDefault();
@@ -215,7 +215,7 @@ function App() {
 								</div>
 
 								<div class='buy'>
-									<div class="button mint-nft"
+									<div className="button mint-nft"
 										disabled={claimingNft ? 1 : 0}
 										onClick={(e) => {
 											e.preventDefault();
@@ -235,15 +235,15 @@ function App() {
 				)}
 					//--END MINT--
 				</div>
-				<div class="hero-img two-col-block__column">
+				<div className="hero-img two-col-block__column">
 					<img src="./img/hero.gif" alt="EXILE XCiX" />
-					<div class="sticky-tape sticky-tape-1"></div>
-					<div class="sticky-tape sticky-tape-2"></div>
+					<div className="sticky-tape sticky-tape-1"></div>
+					<div className="sticky-tape sticky-tape-2"></div>
 				</div>
 			</header>
 		
 
-			<div class="disclaimer">
+			<div className="disclaimer">
 				<p>
 					Please make sure you are connected to the right network (
 					{CONFIG.NETWORK.NAME} Mainnet) and the correct address. Please note:
@@ -258,8 +258,8 @@ function App() {
 			</div>
 			<main>
 				<a id="join"></a>
-				<section class="join-exile two-col-block" aria-label="Join Exile XCiX">
-					<div class="join-copy two-col-block__column">
+				<section className="join-exile two-col-block" aria-label="Join Exile XCiX">
+					<div className="join-copy two-col-block__column">
 						<h2>
 							NFT project for the <span>XCIX</span>
 						</h2>
@@ -271,37 +271,37 @@ function App() {
 						</p>
 					</div>
 
-					<div class="join-links two-col-block__column">
+					<div className="join-links two-col-block__column">
 						<p>JOIN US:</p>
-						<div class="two-col-block social">
-							<a href="https://discord.gg/3JGtdSqUH6" target="_blank" class="two-col-block__column">
+						<div className="two-col-block social">
+							<a href="https://discord.gg/3JGtdSqUH6" target="_blank" className="two-col-block__column">
 								<img src="./img/discord.png" alt="Discord" />
 							</a>
 							<a
 								href="https://twitter.com/ExileXCIX"
 								target="_blank"
-								class="two-col-block__column"
+								className="two-col-block__column"
 							>
 								<img src="./img/twitter.png" alt="Twitter" />
 							</a>
 						</div>
 					</div>
 				</section>
-				<section class="banner">
+				<section className="banner">
 					<img src="./img/banner.png" alt="banner" />
 				</section>
-				<section class="origins">
+				<section className="origins">
 					<h2>Exile Origins</h2>
-					<div class="two-col-block">
-						<div class="origins-copy-left two-col-block__column">
-							<p class="no-margin">You may not realise it but life exists beyond your reality, somewhat different yet sharing the same struggles. Tyranny, selfishness, greed. These are universal. Where there is life, they exist.</p>
+					<div className="two-col-block">
+						<div className="origins-copy-left two-col-block__column">
+							<p className="no-margin">You may not realise it but life exists beyond your reality, somewhat different yet sharing the same struggles. Tyranny, selfishness, greed. These are universal. Where there is life, they exist.</p>
 							<p>For centuries and through these dimensions, a governing elite 1% have put in place rules, regulations and restrictions to control the ‘remainder’.
 							</p>
 							<p>One rebel, a variation of whom exists in every dimension, unique yet familiar, has long fought for this ‘remainder’. Operating in the shadows with name and description passed on through folklore, hearsay and partial sightings – long admired by the people.
 							</p>
 						</div>
-						<div class="origins-copy-right two-col-block__column">
-							<p class="no-margin">
+						<div className="origins-copy-right two-col-block__column">
+							<p className="no-margin">
 								However, the line between good and evil is a thin one. One man’s friend is another man’s foe. Increasingly outcast by mainstream society as the elite use their tightening grip of media to turn public opinion against the rebel and pursue them for their ‘crimes’.</p>
 							<p>
 								Individually outnumbered, out-financed, isolated and exhausted. The rebels have been banished from the disparate dimensions with a bounty on their head, exiled by the very people they were trying to help. 
@@ -314,7 +314,7 @@ function App() {
 					</div>
 				</section>
 				<a id="roadmap"></a>
-				<section class="roadmap">
+				<section className="roadmap">
 					
 						<h2>Roadmap <span>Coming Soon</span></h2>
 						<p>Our project ethos is to help the underdog, support the little guy and a belief that we can achieve much more together than we could have alone. Our roadmap is designed to help achieve that and will be voted on in the community before finalising.</p>
@@ -322,67 +322,67 @@ function App() {
 					
 				</section>
 				<a id="team"></a>
-				<section class="team">
+				<section className="team">
 					<h2>The Team</h2>
-					<p class="blurb">A team of 4 Exiles each with 10-15yrs experience across creative, technical, marketing and innovation. All a bit worn down by the grind of a 9-5, feeling boxed-in and under-utilised. We aim to break free and invest more time in developing and supporting creative ventures. Hence the inspiration for the project.</p>
-					<div class="team-grid">
-					<div class="team-member brian two-col-block">
+					<p className="blurb">A team of 4 Exiles each with 10-15yrs experience across creative, technical, marketing and innovation. All a bit worn down by the grind of a 9-5, feeling boxed-in and under-utilised. We aim to break free and invest more time in developing and supporting creative ventures. Hence the inspiration for the project.</p>
+					<div className="team-grid">
+					<div className="team-member brian two-col-block">
 						<img
 							src="./img/xro.jpg"
 							alt="Xro"
-							class="team-avatar two-col-block__column"
+							className="team-avatar two-col-block__column"
 						/>
-						<div class="team-memeber-info two-col-block__column">
-							<h4 class="team-member-name">Xro</h4>
-							<p class="team-member-bio">Story, organisation and coordination</p>
+						<div className="team-memeber-info two-col-block__column">
+							<h4 className="team-member-name">Xro</h4>
+							<p className="team-member-bio">Story, organisation and coordination</p>
 						</div>
 					</div>
-					<div class="team-member peter two-col-block">
+					<div className="team-member peter two-col-block">
 						<img
 							src="./img/pedro.jpg"
 							alt="Pedro"
-							class="team-avatar two-col-block__column"
+							className="team-avatar two-col-block__column"
 						/>
-						<div class="team-memeber-info two-col-block__column">
-							<h4 class="team-member-name">Pedro</h4>
-							<p class="team-member-bio">Artist with an attitude.</p>
+						<div className="team-memeber-info two-col-block__column">
+							<h4 className="team-member-name">Pedro</h4>
+							<p className="team-member-bio">Artist with an attitude.</p>
 						</div>
 					</div>
-					<div class="team-member alan two-col-block">
+					<div className="team-member alan two-col-block">
 						<img
 							src="./img/al.jpg"
 							alt="Al"
-							class="team-avatar two-col-block__column"
+							className="team-avatar two-col-block__column"
 						/>
-						<div class="team-memeber-info two-col-block__column">
-							<h4 class="team-member-name">Al</h4>
-							<p class="team-member-bio">Technology and development.</p>
+						<div className="team-memeber-info two-col-block__column">
+							<h4 className="team-member-name">Al</h4>
+							<p className="team-member-bio">Technology and development.</p>
 						</div>
 					</div>
-					<div class="team-member mal two-col-block">
+					<div className="team-member mal two-col-block">
 						<img
 							src="./img/macky.jpg"
 							alt="Macky"
-							class="team-avatar two-col-block__column"
+							className="team-avatar two-col-block__column"
 						/>
-						<div class="team-memeber-info two-col-block__column">
-							<h4 class="team-member-name">Macky</h4>
-							<p class="team-member-bio">Community, creative and security.</p>
+						<div className="team-memeber-info two-col-block__column">
+							<h4 className="team-member-name">Macky</h4>
+							<p className="team-member-bio">Community, creative and security.</p>
 						</div>
 					</div>
 					</div>
 				</section>
 				{!exileAlliances ? (<>
 				</>):(
-				<section class="partners">
+				<section className="partners">
 					<h2>Exile Alliances</h2>
-					<div class="partner-wrap">
-						<div class="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
-						<div class="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
-						<div class="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
-						<div class="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
-						<div class="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
-						<div class="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
+					<div className="partner-wrap">
+						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
+						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
+						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
+						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
+						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
+						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
 					</div>
 				</section>
 				)}
