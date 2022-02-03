@@ -57,7 +57,7 @@ function App() {
 			.then((receipt) => {
 				console.log(receipt);
 				setFeedback(
-					`WOW, the ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+					`The ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
 				);
 				setClaimingNft(false);
 				dispatch(fetchData(blockchain.account));
@@ -143,7 +143,7 @@ function App() {
 				<div className="hero-text two-col-block__column">
 					<h1>Join the Axis of Exiles</h1>
 					<p>
-						9,999 unique Exile XCIX NFTs randomly generated on the Ethereum
+						999 unique Exile XCIX NFTs randomly generated on the Ethereum
 						blockchain.
 					</p>
 					{!mintLive ? (
