@@ -106,7 +106,7 @@ function App() {
 	}, [blockchain.account]);
 
 	let mintLive = false;
-	let exileAlliances = false;
+	let exileAlliances = true;
 
 	return (
 		<div className="wrapper" id="modern_wrap">
@@ -138,7 +138,15 @@ function App() {
 					</p>
 					{!mintLive ? (
 					//--PRE MINT--
-					<div className="mint-button pre-mint button"><p>Mint coming soon</p></div>
+					<>
+							<p>
+								{CONFIG.SYMBOL} tokens cost {CONFIG.DISPLAY_COST}{" "}
+								{CONFIG.NETWORK.SYMBOL} excluding gas fee.
+							</p>
+							<div className="mint-button pre-mint button">
+								<p>Minting 18.02.22</p>
+							</div>
+						</>
 					//--END PRE MINT--
 					):(
 						<>
@@ -315,11 +323,91 @@ function App() {
 				</section>
 				<a id="roadmap"></a>
 				<section className="roadmap">
-					
-						<h2>Roadmap <span>Coming Soon</span></h2>
-						<p>Our project ethos is to help the underdog, support the little guy and a belief that we can achieve much more together than we could have alone. Our roadmap is designed to help achieve that and will be voted on in the community before finalising.</p>
-						<img src="./img/graffiti.png" alt="XCIX" />
-					
+					<h2>
+						Stage 1 Roadmap <span>Genesis Collection</span>
+					</h2>
+					<p>
+						The Genesis Release will contain exclusive traits limited to Genesis
+						drop only guaranteeing rarity for the long term. We gave our members
+						opportunity to vote and feedback on our roadmap over the last few
+						months. We've updated the immediate term (Genesis) roadmap to
+						reflect this feedback.
+					</p>
+					<div className="roadmap-chart">
+						<div className="percent-sold">
+							<span>33% - </span>
+							<p>10 ultra-rare 1/1 Characters</p>
+						</div>
+						<div className="thirty-three-goals goals">
+							<div className="goal-wrap">
+								<img src="./img/play_arrow.svg" />
+								<p>
+									Ultra-rare 1/1 (Full Characters) will be randomly airdropped
+									to 10 of the first 333 collectors
+								</p>
+							</div>
+							<div className="goal-wrap">
+								<img src="./img/play_arrow.svg" />
+								<p>All profits reinvested in marketing until sold out.</p>
+							</div>
+						</div>
+						<div className="percent-sold">
+							<span>66% - </span>
+							<p>3d Character and Gas Refund Draw</p>
+						</div>
+						<div className="sixty-six-goals goals">
+							<div className="goal-wrap">
+								<img src="./img/play_arrow.svg" />
+								<p>
+									3D Full Body Test Exile Character Developed for future rollout
+								</p>
+							</div>
+							<div className="goal-wrap">
+								<img src="./img/play_arrow.svg" />
+								<p>
+									Gas Refund Draw – Holders of Exile characters 1-666 will be
+									entered into a draw to win their Gas Fee back (10 winners).
+								</p>
+							</div>
+						</div>
+						<div className="percent-sold">
+							<span>100% - </span>
+							<p>Community Fund and 1 ETH Draw</p>
+						</div>
+						<div className="hundred-goals goals">
+							<div className="goal-wrap">
+								<img src="./img/play_arrow.svg" />
+								<p>
+									A community fund will be established and all holders will have
+									the right to vote on which projects it is put towards. See
+									Vision Doc below for more details.
+								</p>
+							</div>
+							<div className="goal-wrap">
+								<img src="./img/play_arrow.svg" />
+								<p>
+									Prize Drop - Airdrop NFTs and disperse other prizes to early
+									supporters and competiton winners.
+								</p>
+							</div>
+							<div className="goal-wrap">
+								<img src="./img/play_arrow.svg" />
+								<p>
+									Draw to win 1ETH - every Exile Holder will be entered in to
+									win.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<br />
+						<p>
+							Holders of Exile XCIX Genesis NFTs will also entitle them to an
+							NFT from the next release.
+						</p>
+						<a href="./Exile-XCIX-Vision.pdf">Read the Vision Doc</a>
+					</div>
+					<img src="./img/graffiti.png" alt="XCiX" />
 				</section>
 				<a id="team"></a>
 				<section className="team">
@@ -375,16 +463,43 @@ function App() {
 				{!exileAlliances ? (<>
 				</>):(
 				<section className="partners">
-					<h2>Exile Alliances</h2>
-					<div className="partner-wrap">
-						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
-						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
-						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
-						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
-						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
-						<div className="partner"><a href="" target="_blank"><img src="./img/alan.png" alt="" /></a></div>
+				<h2>Exile Alliances</h2>
+				<div className="partner-wrap">
+					<div className="partner">
+						<a href="https://raritysniper.com/" target="_blank">
+							<img
+								src="./img/rarity-sniper.png"
+								title="Rarity Sniper"
+								alt="Rarity Sniper"
+							/>
+						</a>
 					</div>
-				</section>
+					<div className="partner">
+						<a
+							href="https://nftevening.com/event/exile-xcix-genesis-drop"
+							target="_blank"
+						>
+							<img
+								src="./img/NFTevening.png"
+								title="NFT Evening"
+								alt="NFT Evening"
+							/>
+						</a>
+					</div>
+					<div className="partner">
+						<a
+							href="https://nftdropscalendar.com/nft-drops/exile-xcix"
+							target="_blank"
+						>
+							<img
+								src="./img/NFT-Calendar-Logo.png"
+								title="NFT Calendar"
+								alt="NFT Calendar"
+							/>
+						</a>
+					</div>
+				</div>
+			</section>
 				)}
 			</main>
 		</div>
