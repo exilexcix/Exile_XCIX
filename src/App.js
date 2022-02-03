@@ -111,34 +111,44 @@ function App() {
 	return (
 		<div className="wrapper" id="modern_wrap">
 			<img className="logo" src="./img/logo.png" alt="EXILE XCiX" />
-			//--Mobile NAV--
+
 			<nav className="mobile-nav">
-				
 				<ul>
-					<li><a href="#join">JOIN </a></li>
-					<li><a href="#roadmap">ROADMAP</a></li>
-					<li><a href="#team">TEAM</a></li>
+					<li>
+						<a href="#join">JOIN </a>
+					</li>
+					<li>
+						<a href="#roadmap">ROADMAP</a>
+					</li>
+					<li>
+						<a href="#team">TEAM</a>
+					</li>
 				</ul>
 			</nav>
-			//--DESKTOP NAV--
+
 			<nav className="dt-nav">
-				
 				<ul>
-					<li><a href="#join">JOIN EXILE XCiX</a></li>
-					<li><a href="#roadmap">ROADMAP</a></li>
-					<li><a href="#team">THE TEAM</a></li>
+					<li>
+						<a href="#join">JOIN EXILE XCiX</a>
+					</li>
+					<li>
+						<a href="#roadmap">ROADMAP</a>
+					</li>
+					<li>
+						<a href="#team">THE TEAM</a>
+					</li>
 				</ul>
 			</nav>
 			<header className="two-col-block">
-			<div className="hero-text two-col-block__column">
+				<div className="hero-text two-col-block__column">
 					<h1>Join the Axis of Exiles</h1>
 					<p>
 						9,999 unique Exile XCIX NFTs randomly generated on the Ethereum
 						blockchain.
 					</p>
 					{!mintLive ? (
-					//--PRE MINT--
-					<>
+						//--PRE MINT--
+						<>
 							<p>
 								{CONFIG.SYMBOL} tokens cost {CONFIG.DISPLAY_COST}{" "}
 								{CONFIG.NETWORK.SYMBOL} excluding gas fee.
@@ -147,100 +157,107 @@ function App() {
 								<p>Minting 18.02.22</p>
 							</div>
 						</>
-					//--END PRE MINT--
-					):(
+					) : (
+						//--END PRE MINT--
 						<>
-					//--MINT--
-					<h2 className="availability">
-					{data.totalSupply} / {CONFIG.MAX_SUPPLY}
-					</h2>
-
-					//-- SOLD OUT--
-					{Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
-					<div className="sold-out">
-						<div className="mint-button button"><p>SOLD OUT</p></div>
-						<p>You can still find {CONFIG.NFT_NAME} on
-
-						<a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
-							{CONFIG.MARKETPLACE}
-						</a></p>
-					</div>
-				) : (
-					<>
-						<h3>
-							1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
-							{CONFIG.NETWORK.SYMBOL}.
-						</h3>
-
-						<p>Excluding gas fees.</p>
-
-						{blockchain.account === "" || blockchain.smartContract === null ? (
-							<div className="not-connected">
-								<p>Connect to the {CONFIG.NETWORK.NAME} network</p>
-								<div className="connect-wrap">
-								<div className="button connect-btn"
-									onClick={(e) => {
-										e.preventDefault();
-										dispatch(connect());
-										getData();
-									}}
-								>
-									<p>CONNECT</p>
-								</div>
-								{blockchain.errorMsg !== "" ? (
-									<>
-										<p>{blockchain.errorMsg}</p>
-									</>
-								) : null}
-							</div>
-							</div>
-						) : (
-							<>
-								<p>{feedback}</p>
-								<div className="purchase-wrap">
-								<div className="quantity">
-									<div className="button decrement-btn"
-										disabled={claimingNft ? 1 : 0}
-										onClick={(e) => {
-											e.preventDefault();
-											decrementMintAmount();
-										}}
-									>
-										-
+							//--MINT--
+							<h2 className="availability">
+								{data.totalSupply} / {CONFIG.MAX_SUPPLY}
+							</h2>
+							//-- SOLD OUT--
+							{Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+								<div className="sold-out">
+									<div className="mint-button button">
+										<p>SOLD OUT</p>
 									</div>
-
-									<p>{mintAmount}</p>
-
-									<div className="button increment-btn"
-										disabled={claimingNft ? 1 : 0}
-										onClick={(e) => {
-											e.preventDefault();
-											incrementMintAmount();
-										}}
-									>
-										+
-									</div>
+									<p>
+										You can still find {CONFIG.NFT_NAME} on
+										<a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
+											{CONFIG.MARKETPLACE}
+										</a>
+									</p>
 								</div>
+							) : (
+								<>
+									<h3>
+										1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+										{CONFIG.NETWORK.SYMBOL}.
+									</h3>
 
-								<div class='buy'>
-									<div className="button mint-nft"
-										disabled={claimingNft ? 1 : 0}
-										onClick={(e) => {
-											e.preventDefault();
-											claimNFTs();
-											getData();
-										}}
-									>
-										{claimingNft ? "BUSY" : "BUY"}
-									</div>
-								</div>
-								</div>
-							</>
-						)}
-					</>
-				)}
-				</>
-				)}
+									<p>Excluding gas fees.</p>
+
+									{blockchain.account === "" ||
+									blockchain.smartContract === null ? (
+										<div className="not-connected">
+											<p>Connect to the {CONFIG.NETWORK.NAME} network</p>
+											<div className="connect-wrap">
+												<div
+													className="button connect-btn"
+													onClick={(e) => {
+														e.preventDefault();
+														dispatch(connect());
+														getData();
+													}}
+												>
+													<p>CONNECT</p>
+												</div>
+												{blockchain.errorMsg !== "" ? (
+													<>
+														<p>{blockchain.errorMsg}</p>
+													</>
+												) : null}
+											</div>
+										</div>
+									) : (
+										<>
+											<p>{feedback}</p>
+											<div className="purchase-wrap">
+												<div className="quantity">
+													<div
+														className="button decrement-btn"
+														disabled={claimingNft ? 1 : 0}
+														onClick={(e) => {
+															e.preventDefault();
+															decrementMintAmount();
+														}}
+													>
+														-
+													</div>
+
+													<p>{mintAmount}</p>
+
+													<div
+														className="button increment-btn"
+														disabled={claimingNft ? 1 : 0}
+														onClick={(e) => {
+															e.preventDefault();
+															incrementMintAmount();
+														}}
+													>
+														+
+													</div>
+												</div>
+
+												<div class="buy">
+													<div
+														className="button mint-nft"
+														disabled={claimingNft ? 1 : 0}
+														onClick={(e) => {
+															e.preventDefault();
+															claimNFTs();
+															getData();
+														}}
+													>
+														{claimingNft ? "BUSY" : "BUY"}
+													</div>
+												</div>
+											</div>
+										</>
+									)}
+								</>
+							)}
+						</>
+					)}
 					//--END MINT--
 				</div>
 				<div className="hero-img two-col-block__column">
@@ -249,7 +266,6 @@ function App() {
 					<div className="sticky-tape sticky-tape-2"></div>
 				</div>
 			</header>
-		
 
 			<div className="disclaimer">
 				<p>
@@ -266,23 +282,34 @@ function App() {
 			</div>
 			<main>
 				<a id="join"></a>
-				<section className="join-exile two-col-block" aria-label="Join Exile XCiX">
+				<section
+					className="join-exile two-col-block"
+					aria-label="Join Exile XCiX"
+				>
 					<div className="join-copy two-col-block__column">
 						<h2>
 							NFT project for the <span>XCIX</span>
 						</h2>
-						<p>We'd love to bring together a diverse range of creators and help them to get their projects off the ground by introducing them to complementary creators, using our network to promote them and a community fund to invest in them.
-
+						<p>
+							We'd love to bring together a diverse range of creators and help
+							them to get their projects off the ground by introducing them to
+							complementary creators, using our network to promote them and a
+							community fund to invest in them.
 						</p>
 						<p>
-							Join the Discord, follow on Twitter. If you want to be rewarded be brave, be busy, be creative, and importantly believe!
+							Join the Discord, follow on Twitter. If you want to be rewarded be
+							brave, be busy, be creative, and importantly believe!
 						</p>
 					</div>
 
 					<div className="join-links two-col-block__column">
 						<p>JOIN US:</p>
 						<div className="two-col-block social">
-							<a href="https://discord.gg/3JGtdSqUH6" target="_blank" className="two-col-block__column">
+							<a
+								href="https://discord.gg/3JGtdSqUH6"
+								target="_blank"
+								className="two-col-block__column"
+							>
 								<img src="./img/discord.png" alt="Discord" />
 							</a>
 							<a
@@ -302,20 +329,42 @@ function App() {
 					<h2>Exile Origins</h2>
 					<div className="two-col-block">
 						<div className="origins-copy-left two-col-block__column">
-							<p className="no-margin">You may not realise it but life exists beyond your reality, somewhat different yet sharing the same struggles. Tyranny, selfishness, greed. These are universal. Where there is life, they exist.</p>
-							<p>For centuries and through these dimensions, a governing elite 1% have put in place rules, regulations and restrictions to control the ‘remainder’.
+							<p className="no-margin">
+								You may not realise it but life exists beyond your reality,
+								somewhat different yet sharing the same struggles. Tyranny,
+								selfishness, greed. These are universal. Where there is life,
+								they exist.
 							</p>
-							<p>One rebel, a variation of whom exists in every dimension, unique yet familiar, has long fought for this ‘remainder’. Operating in the shadows with name and description passed on through folklore, hearsay and partial sightings – long admired by the people.
+							<p>
+								For centuries and through these dimensions, a governing elite 1%
+								have put in place rules, regulations and restrictions to control
+								the ‘remainder’.
+							</p>
+							<p>
+								One rebel, a variation of whom exists in every dimension, unique
+								yet familiar, has long fought for this ‘remainder’. Operating in
+								the shadows with name and description passed on through
+								folklore, hearsay and partial sightings – long admired by the
+								people.
 							</p>
 						</div>
 						<div className="origins-copy-right two-col-block__column">
 							<p className="no-margin">
-								However, the line between good and evil is a thin one. One man’s friend is another man’s foe. Increasingly outcast by mainstream society as the elite use their tightening grip of media to turn public opinion against the rebel and pursue them for their ‘crimes’.</p>
-							<p>
-								Individually outnumbered, out-financed, isolated and exhausted. The rebels have been banished from the disparate dimensions with a bounty on their head, exiled by the very people they were trying to help. 
+								However, the line between good and evil is a thin one. One man’s
+								friend is another man’s foe. Increasingly outcast by mainstream
+								society as the elite use their tightening grip of media to turn
+								public opinion against the rebel and pursue them for their
+								‘crimes’.
 							</p>
 							<p>
-								Now, banding together for the first time, realising that they are stronger together than alone, our exiles are resolute.
+								Individually outnumbered, out-financed, isolated and exhausted.
+								The rebels have been banished from the disparate dimensions with
+								a bounty on their head, exiled by the very people they were
+								trying to help.
+							</p>
+							<p>
+								Now, banding together for the first time, realising that they
+								are stronger together than alone, our exiles are resolute.
 							</p>
 							<p>They will continue the fight for the remaining 99.</p>
 						</div>
@@ -412,94 +461,105 @@ function App() {
 				<a id="team"></a>
 				<section className="team">
 					<h2>The Team</h2>
-					<p className="blurb">A team of 4 Exiles each with 10-15yrs experience across creative, technical, marketing and innovation. All a bit worn down by the grind of a 9-5, feeling boxed-in and under-utilised. We aim to break free and invest more time in developing and supporting creative ventures. Hence the inspiration for the project.</p>
+					<p className="blurb">
+						A team of 4 Exiles each with 10-15yrs experience across creative,
+						technical, marketing and innovation. All a bit worn down by the
+						grind of a 9-5, feeling boxed-in and under-utilised. We aim to break
+						free and invest more time in developing and supporting creative
+						ventures. Hence the inspiration for the project.
+					</p>
 					<div className="team-grid">
-					<div className="team-member brian two-col-block">
-						<img
-							src="./img/xro.jpg"
-							alt="Xro"
-							className="team-avatar two-col-block__column"
-						/>
-						<div className="team-memeber-info two-col-block__column">
-							<h4 className="team-member-name">Xro</h4>
-							<p className="team-member-bio">Story, organisation and coordination</p>
+						<div className="team-member brian two-col-block">
+							<img
+								src="./img/xro.jpg"
+								alt="Xro"
+								className="team-avatar two-col-block__column"
+							/>
+							<div className="team-memeber-info two-col-block__column">
+								<h4 className="team-member-name">Xro</h4>
+								<p className="team-member-bio">
+									Story, organisation and coordination
+								</p>
+							</div>
 						</div>
-					</div>
-					<div className="team-member peter two-col-block">
-						<img
-							src="./img/pedro.jpg"
-							alt="Pedro"
-							className="team-avatar two-col-block__column"
-						/>
-						<div className="team-memeber-info two-col-block__column">
-							<h4 className="team-member-name">Pedro</h4>
-							<p className="team-member-bio">Artist with an attitude.</p>
+						<div className="team-member peter two-col-block">
+							<img
+								src="./img/pedro.jpg"
+								alt="Pedro"
+								className="team-avatar two-col-block__column"
+							/>
+							<div className="team-memeber-info two-col-block__column">
+								<h4 className="team-member-name">Pedro</h4>
+								<p className="team-member-bio">Artist with an attitude.</p>
+							</div>
 						</div>
-					</div>
-					<div className="team-member alan two-col-block">
-						<img
-							src="./img/al.jpg"
-							alt="Al"
-							className="team-avatar two-col-block__column"
-						/>
-						<div className="team-memeber-info two-col-block__column">
-							<h4 className="team-member-name">Al</h4>
-							<p className="team-member-bio">Technology and development.</p>
+						<div className="team-member alan two-col-block">
+							<img
+								src="./img/al.jpg"
+								alt="Al"
+								className="team-avatar two-col-block__column"
+							/>
+							<div className="team-memeber-info two-col-block__column">
+								<h4 className="team-member-name">Al</h4>
+								<p className="team-member-bio">Technology and development.</p>
+							</div>
 						</div>
-					</div>
-					<div className="team-member mal two-col-block">
-						<img
-							src="./img/macky.jpg"
-							alt="Macky"
-							className="team-avatar two-col-block__column"
-						/>
-						<div className="team-memeber-info two-col-block__column">
-							<h4 className="team-member-name">Macky</h4>
-							<p className="team-member-bio">Community, creative and security.</p>
+						<div className="team-member mal two-col-block">
+							<img
+								src="./img/macky.jpg"
+								alt="Macky"
+								className="team-avatar two-col-block__column"
+							/>
+							<div className="team-memeber-info two-col-block__column">
+								<h4 className="team-member-name">Macky</h4>
+								<p className="team-member-bio">
+									Community, creative and security.
+								</p>
+							</div>
 						</div>
-					</div>
 					</div>
 				</section>
-				{!exileAlliances ? (<>
-				</>):(
-				<section className="partners">
-				<h2>Exile Alliances</h2>
-				<div className="partner-wrap">
-					<div className="partner">
-						<a href="https://raritysniper.com/" target="_blank">
-							<img
-								src="./img/rarity-sniper.png"
-								title="Rarity Sniper"
-								alt="Rarity Sniper"
-							/>
-						</a>
-					</div>
-					<div className="partner">
-						<a
-							href="https://nftevening.com/event/exile-xcix-genesis-drop"
-							target="_blank"
-						>
-							<img
-								src="./img/NFTevening.png"
-								title="NFT Evening"
-								alt="NFT Evening"
-							/>
-						</a>
-					</div>
-					<div className="partner">
-						<a
-							href="https://nftdropscalendar.com/nft-drops/exile-xcix"
-							target="_blank"
-						>
-							<img
-								src="./img/NFT-Calendar-Logo.png"
-								title="NFT Calendar"
-								alt="NFT Calendar"
-							/>
-						</a>
-					</div>
-				</div>
-			</section>
+				{!exileAlliances ? (
+					<></>
+				) : (
+					<section className="partners">
+						<h2>Exile Alliances</h2>
+						<div className="partner-wrap">
+							<div className="partner">
+								<a href="https://raritysniper.com/" target="_blank">
+									<img
+										src="./img/rarity-sniper.png"
+										title="Rarity Sniper"
+										alt="Rarity Sniper"
+									/>
+								</a>
+							</div>
+							<div className="partner">
+								<a
+									href="https://nftevening.com/event/exile-xcix-genesis-drop"
+									target="_blank"
+								>
+									<img
+										src="./img/NFTevening.png"
+										title="NFT Evening"
+										alt="NFT Evening"
+									/>
+								</a>
+							</div>
+							<div className="partner">
+								<a
+									href="https://nftdropscalendar.com/nft-drops/exile-xcix"
+									target="_blank"
+								>
+									<img
+										src="./img/NFT-Calendar-Logo.png"
+										title="NFT Calendar"
+										alt="NFT Calendar"
+									/>
+								</a>
+							</div>
+						</div>
+					</section>
 				)}
 			</main>
 		</div>
