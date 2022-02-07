@@ -552,7 +552,19 @@ function App() {
 									target="_blank"
 								>
 									<img
-										src="./img/NFT-Calendar-Logo.png"
+										src="./img/nftdropscalendar.png"
+										title="NFT Drops Calendar"
+										alt="NFT Drops Calendar"
+									/>
+								</a>
+							</div>
+							<div className="partner">
+								<a
+									href="https://nftcalendar.io/event/exile-xcix-genesis-drop/"
+									target="_blank"
+								>
+									<img
+										src="./img/nftcalendar.png"
 										title="NFT Calendar"
 										alt="NFT Calendar"
 									/>
