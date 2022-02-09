@@ -548,6 +548,18 @@ function App() {
 							</div>
 							<div className="partner">
 								<a
+									href="https://nftcalendar.io/event/exile-xcix-genesis-drop/"
+									target="_blank"
+								>
+									<img
+										src="./img/nftcalendar.png"
+										title="NFT Calendar"
+										alt="NFT Calendar"
+									/>
+								</a>
+							</div>
+							<div className="partner">
+								<a
 									href="https://nftdropscalendar.com/nft-drops/exile-xcix"
 									target="_blank"
 								>
@@ -558,15 +570,56 @@ function App() {
 									/>
 								</a>
 							</div>
+
+							<div className="partner">
+								<a href="https://nextdrop.is/project/6804" target="_blank">
+									<img
+										src="./img/nextdrop.png"
+										title="Next Drop"
+										alt="Next Drop"
+									/>
+								</a>
+							</div>
+							<div className="partner">
+								<a href="https://www.nftjet.com/" target="_blank">
+									<img src="./img/nftjet.png" title="NFT Jet" alt="NFT Jet" />
+								</a>
+							</div>
 							<div className="partner">
 								<a
-									href="https://nftcalendar.io/event/exile-xcix-genesis-drop/"
+									href="https://upcomingnft.art/exile-xcix-genesis-release/ "
 									target="_blank"
 								>
 									<img
-										src="./img/nftcalendar.png"
-										title="NFT Calendar"
-										alt="NFT Calendar"
+										src="./img/upcomingnft.png"
+										title="v NFT"
+										alt="Upcoming NFT"
+									/>
+								</a>
+							</div>
+							<div className="partner">
+								<a href="https://notfin.com/exile-xcix/" target="_blank">
+									<img src="./img/notfin.png" title="notfin" alt="notfin" />
+								</a>
+							</div>
+							<div className="partner">
+								<a
+									href="https://ethereumupcoming.art/upcoming-drops/"
+									target="_blank"
+								>
+									<img
+										src="./img/allchainsnft.png"
+										title="Allchains NFT"
+										alt="Allchains NFT"
+									/>
+								</a>
+							</div>
+							<div className="partner">
+								<a href="https://nftiming.com/" target="_blank">
+									<img
+										src="./img/nftiming.png"
+										title="NFTiming"
+										alt="NFTiming"
 									/>
 								</a>
 							</div>
