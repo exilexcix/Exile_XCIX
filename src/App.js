@@ -106,6 +106,7 @@ function App() {
 	}, [blockchain.account]);
 
 	let mintLive = false;
+	let preSaleLive = true;
 	let exileAlliances = true;
 
 	return (
@@ -149,16 +150,130 @@ function App() {
 					{!mintLive ? (
 						//--PRE MINT--
 						<>
-							<p>
-								{CONFIG.SYMBOL} tokens cost {CONFIG.DISPLAY_COST}{" "}
-								{CONFIG.NETWORK.SYMBOL} excluding gas fee.
-							</p>
-							<div className="mint-button pre-mint button">
-								<p>Minting 18.02.22</p>
-							</div>
+							{!preSaleLive ? (
+								<>
+									<p>
+										{CONFIG.SYMBOL} tokens cost {CONFIG.DISPLAY_COST}{" "}
+										{CONFIG.NETWORK.SYMBOL} excluding gas fee.
+									</p>
+									<div className="mint-button pre-mint button">
+										<p>Minting 18.02.22</p>
+									</div>
+								</>
+							) : (
+								<>
+									<h1>PreSale is Live!</h1>
+									<p>
+										If you are lucky enough to be on the whitelist you can
+										purchase your Exiles now!
+									</p>
+									<p>
+										If you are not on the whitelist, trying to purchase now will
+										result in a failed transaction.
+									</p>
+									<p>Public mint begins February 18th.</p>
+									//--MINT--
+									<h2 className="availability">
+										{data.totalSupply} / {CONFIG.MAX_SUPPLY}
+									</h2>
+									//-- SOLD OUT--
+									{Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
+										<div className="sold-out">
+											<div className="mint-button button">
+												<p>SOLD OUT</p>
+											</div>
+											<p>
+												You can still find {CONFIG.NFT_NAME} on
+												<a target={"_blank"} href={CONFIG.MARKETPLACE_LINK}>
+													{CONFIG.MARKETPLACE}
+												</a>
+											</p>
+										</div>
+									) : (
+										<>
+											<h3>
+												1 {CONFIG.SYMBOL} costs {CONFIG.DISPLAY_COST}{" "}
+												{CONFIG.NETWORK.SYMBOL}.
+											</h3>
+
+											<p>Excluding gas fees.</p>
+
+											{blockchain.account === "" ||
+											blockchain.smartContract === null ? (
+												<div className="not-connected">
+													<p>Connect to the {CONFIG.NETWORK.NAME} network</p>
+													<div className="connect-wrap">
+														<div
+															className="button connect-btn"
+															onClick={(e) => {
+																e.preventDefault();
+																dispatch(connect());
+																getData();
+															}}
+														>
+															<p>CONNECT</p>
+														</div>
+														{blockchain.errorMsg !== "" ? (
+															<>
+																<p>{blockchain.errorMsg}</p>
+															</>
+														) : null}
+													</div>
+												</div>
+											) : (
+												<>
+													<p>{feedback}</p>
+													<div className="purchase-wrap">
+														<div className="quantity">
+															<div
+																className="button decrement-btn"
+																disabled={claimingNft ? 1 : 0}
+																onClick={(e) => {
+																	e.preventDefault();
+																	decrementMintAmount();
+																}}
+															>
+																-
+															</div>
+
+															<p>{mintAmount}</p>
+
+															<div
+																className="button increment-btn"
+																disabled={claimingNft ? 1 : 0}
+																onClick={(e) => {
+																	e.preventDefault();
+																	incrementMintAmount();
+																}}
+															>
+																+
+															</div>
+														</div>
+
+														<div class="buy">
+															<div
+																className="button mint-nft"
+																disabled={claimingNft ? 1 : 0}
+																onClick={(e) => {
+																	e.preventDefault();
+																	claimNFTs();
+																	getData();
+																}}
+															>
+																{claimingNft ? "BUSY" : "BUY"}
+															</div>
+														</div>
+													</div>
+												</>
+											)}
+										</>
+									)}
+								</>
+							)}
 						</>
 					) : (
 						//--END PRE MINT--
+
 						<>
 							//--MINT--
 							<h2 className="availability">
