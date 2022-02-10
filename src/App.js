@@ -592,7 +592,7 @@ function App() {
 								>
 									<img
 										src="./img/upcomingnft.png"
-										title="v NFT"
+										title="Upcoming NFT"
 										alt="Upcoming NFT"
 									/>
 								</a>
@@ -620,6 +620,15 @@ function App() {
 										src="./img/nftiming.png"
 										title="NFTiming"
 										alt="NFTiming"
+									/>
+								</a>
+							</div>
+							<div className="partner">
+								<a href="https://nftdesire.io/" target="_blank">
+									<img
+										src="./img/nftdesire.png"
+										title="NFT Desire"
+										alt="NFT Desire"
 									/>
 								</a>
 							</div>
