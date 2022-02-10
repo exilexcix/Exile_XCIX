@@ -106,7 +106,7 @@ function App() {
 	}, [blockchain.account]);
 
 	let mintLive = false;
-	let preSaleLive = true;
+	let preSaleLive = false;
 	let exileAlliances = true;
 
 	return (
