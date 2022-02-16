@@ -1,18 +1,18 @@
 {
-	"CONTRACT_ADDRESS": "0x3aDE4bC74063a40bCFDACd4677d71DeF723f8206",
-	"SCAN_LINK": "https://rinkeby.etherscan.io/address/0x3ade4bc74063a40bcfdacd4677d71def723f8206",
+	"CONTRACT_ADDRESS": "0x3db9248ba223427A5EeA02e4182D438FC286aE5E",
+	"SCAN_LINK": "https://etherscan.io/address/0x3db9248ba223427a5eea02e4182d438fc286ae5e",
 	"NETWORK": {
-		"NAME": "Rinkeby",
+		"NAME": "Ethereum",
 		"SYMBOL": "ETH",
-		"ID": 4
+		"ID": 1
 	},
-	"NFT_NAME": "Exile XCIX",
+	"NFT_NAME": "EXILE XCIX",
 	"SYMBOL": "XCIX",
 	"MAX_SUPPLY": 999,
-	"WEI_COST": 20000000000000000,
+	"WEI_COST": 40000000000000000,
 	"DISPLAY_COST": 0.04,
-	"GAS_LIMIT": 285000,
+	"GAS_LIMIT": 500000,
 	"MARKETPLACE": "Opensea",
-	"MARKETPLACE_LINK": "https://opensea.io/",
+	"MARKETPLACE_LINK": "https://opensea.io/collection/exile-xcix",
 	"SHOW_BACKGROUND": false
 }

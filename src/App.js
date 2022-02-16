@@ -57,7 +57,7 @@ function App() {
 			.then((receipt) => {
 				console.log(receipt);
 				setFeedback(
-					`The ${CONFIG.NFT_NAME} is yours! go visit Opensea.io to view it.`
+					`The ${CONFIG.NFT_NAME} is yours! Visit Opensea.io to view it.`
 				);
 				setClaimingNft(false);
 				dispatch(fetchData(blockchain.account));
@@ -106,7 +106,7 @@ function App() {
 	}, [blockchain.account]);
 
 	let mintLive = false;
-	let preSaleLive = false;
+	let preSaleLive = true;
 	let exileAlliances = true;
 
 	return (
@@ -233,7 +233,7 @@ function App() {
 																	decrementMintAmount();
 																}}
 															>
-																-
+																<p>-</p>
 															</div>
 
 															<p>{mintAmount}</p>
@@ -246,7 +246,7 @@ function App() {
 																	incrementMintAmount();
 																}}
 															>
-																+
+																<p>+</p>
 															</div>
 														</div>
 
@@ -260,7 +260,7 @@ function App() {
 																	getData();
 																}}
 															>
-																{claimingNft ? "BUSY" : "BUY"}
+																<p>{claimingNft ? "BUSY" : "BUY"}</p>
 															</div>
 														</div>
 													</div>
@@ -336,7 +336,7 @@ function App() {
 															decrementMintAmount();
 														}}
 													>
-														-
+														<p>-</p>
 													</div>
 
 													<p>{mintAmount}</p>
@@ -349,7 +349,7 @@ function App() {
 															incrementMintAmount();
 														}}
 													>
-														+
+														<p>+</p>
 													</div>
 												</div>
 
@@ -363,7 +363,7 @@ function App() {
 															getData();
 														}}
 													>
-														{claimingNft ? "BUSY" : "BUY"}
+														<p>{claimingNft ? "BUSY" : "BUY"}</p>
 													</div>
 												</div>
 											</div>
