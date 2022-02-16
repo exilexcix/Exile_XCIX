@@ -163,7 +163,7 @@ function App() {
 							) : (
 								<>
 									<h1>PreSale is Live!</h1>
-									<p>
+									{/* <p>
 										If you are lucky enough to be on the whitelist you can
 										purchase your Exiles now!
 									</p>
@@ -171,12 +171,12 @@ function App() {
 										If you are not on the whitelist, trying to purchase now will
 										result in a failed transaction.
 									</p>
-									<p>Public mint begins February 18th.</p>
-									//--MINT--
+									<p>Public mint begins February 18th.</p>  */}
+									{/* //--MINT-- */}
 									<h2 className="availability">
 										{data.totalSupply} / {CONFIG.MAX_SUPPLY}
 									</h2>
-									//-- SOLD OUT--
+									{/* //-- SOLD OUT-- */}
 									{Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
 										<div className="sold-out">
 											<div className="mint-button button">
@@ -275,11 +275,11 @@ function App() {
 						//--END PRE MINT--
 
 						<>
-							//--MINT--
+							{/* //--MINT-- */}
 							<h2 className="availability">
 								{data.totalSupply} / {CONFIG.MAX_SUPPLY}
 							</h2>
-							//-- SOLD OUT--
+							{/* //-- SOLD OUT-- */}
 							{Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
 								<div className="sold-out">
 									<div className="mint-button button">
@@ -373,7 +373,7 @@ function App() {
 							)}
 						</>
 					)}
-					//--END MINT--
+					{/* //--END MINT-- */}
 				</div>
 				<div className="hero-img two-col-block__column">
 					<img src="./img/hero.gif" alt="EXILE XCiX" />
