@@ -173,9 +173,14 @@ function App() {
 									</p>
 									<p>Public mint begins February 18th.</p>  */}
 									{/* //--MINT-- */}
-									<h2 className="availability">
-										{data.totalSupply} / {CONFIG.MAX_SUPPLY}
-									</h2>
+
+									{blockchain.account === "" ||
+									blockchain.smartContract === null ? null : (
+										<h2 className="availability">
+											{data.totalSupply} / {CONFIG.MAX_SUPPLY}
+										</h2>
+									)}
+
 									{/* //-- SOLD OUT-- */}
 									{Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
 										<div className="sold-out">
@@ -272,13 +277,16 @@ function App() {
 							)}
 						</>
 					) : (
-						//--END PRE MINT--
+						// --END PRE MINT--
 
 						<>
 							{/* //--MINT-- */}
-							<h2 className="availability">
-								{data.totalSupply} / {CONFIG.MAX_SUPPLY}
-							</h2>
+							{blockchain.account === "" ||
+							blockchain.smartContract === null ? null : (
+								<h2 className="availability">
+									{data.totalSupply} / {CONFIG.MAX_SUPPLY}
+								</h2>
+							)}
 							{/* //-- SOLD OUT-- */}
 							{Number(data.totalSupply) >= CONFIG.MAX_SUPPLY ? (
 								<div className="sold-out">
