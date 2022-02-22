@@ -307,7 +307,7 @@ function App() {
 										{CONFIG.NETWORK.SYMBOL}.
 									</h3>
 
-									<p>Excluding gas fees.</p>
+									<p>Excluding gas fees. One per transaction.</p>
 
 									{blockchain.account === "" ||
 									blockchain.smartContract === null ? (
@@ -335,7 +335,7 @@ function App() {
 										<>
 											<p>{feedback}</p>
 											<div className="purchase-wrap">
-												<div className="quantity">
+												{/* <div className="quantity">
 													<div
 														className="button decrement-btn"
 														disabled={claimingNft ? 1 : 0}
@@ -359,7 +359,7 @@ function App() {
 													>
 														<p>+</p>
 													</div>
-												</div>
+												</div> */}
 
 												<div class="buy">
 													<div
@@ -371,7 +371,7 @@ function App() {
 															getData();
 														}}
 													>
-														<p>{claimingNft ? "BUSY" : "BUY"}</p>
+														<p>{claimingNft ? "BUSY" : "MINT"}</p>
 													</div>
 												</div>
 											</div>
