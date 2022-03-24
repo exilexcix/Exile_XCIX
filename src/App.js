@@ -118,9 +118,9 @@ function App() {
 					<li>
 						<a href="#join">JOIN </a>
 					</li>
-					<li>
+					{/* <li>
 						<a href="#roadmap">ROADMAP</a>
-					</li>
+					</li> */}
 					<li>
 						<a href="#team">TEAM</a>
 					</li>
@@ -132,9 +132,9 @@ function App() {
 					<li>
 						<a href="#join">JOIN EXILE XCiX</a>
 					</li>
-					<li>
+					{/* <li>
 						<a href="#roadmap">ROADMAP</a>
-					</li>
+					</li> */}
 					<li>
 						<a href="#team">THE TEAM</a>
 					</li>
@@ -307,7 +307,7 @@ function App() {
 										{CONFIG.NETWORK.SYMBOL}.
 									</h3>
 
-									<p>Excluding gas fees. One per transaction.</p>
+									<p>Excluding gas fees.</p>
 
 									{blockchain.account === "" ||
 									blockchain.smartContract === null ? (
@@ -494,7 +494,7 @@ function App() {
 					</div>
 				</section>
 				<a id="roadmap"></a>
-				<section className="roadmap">
+				{/* <section className="roadmap">
 					<h2>
 						Stage 1 Roadmap <span>Genesis Collection</span>
 					</h2>
@@ -580,7 +580,7 @@ function App() {
 						<a href="./Exile-XCIX-Vision.pdf">Read the Vision Doc</a>
 					</div>
 					<img src="./img/graffiti.png" alt="XCiX" />
-				</section>
+				</section> */}
 				<a id="team"></a>
 				<section className="team">
 					<h2>The Team</h2>
