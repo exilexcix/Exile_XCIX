@@ -335,7 +335,7 @@ function App() {
 										<>
 											<p>{feedback}</p>
 											<div className="purchase-wrap">
-												{/* <div className="quantity">
+												<div className="quantity">
 													<div
 														className="button decrement-btn"
 														disabled={claimingNft ? 1 : 0}
@@ -359,7 +359,7 @@ function App() {
 													>
 														<p>+</p>
 													</div>
-												</div> */}
+												</div>
 
 												<div class="buy">
 													<div
